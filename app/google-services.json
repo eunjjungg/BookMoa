@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "506998108079",
+    "project_id": "bookmoa-73d2a",
+    "storage_bucket": "bookmoa-73d2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506998108079:android:db5ddc0696cb385492895a",
+        "android_client_info": {
+          "package_name": "com.smu.bookmoa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506998108079-uc3bhqetrejjt6f52ndod32u8a44gnob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smu.bookmoa",
+            "certificate_hash": "f2d559fb6929f80a6e922d81684e7649f1bd3774"
+          }
+        },
+        {
+          "client_id": "506998108079-0s8of8ct913s1qp1icjbqqgsllmr4t5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7bvCW0202ULxup-B4l4J9BZvjC2B8SE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506998108079-0s8of8ct913s1qp1icjbqqgsllmr4t5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
