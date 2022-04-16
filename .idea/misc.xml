@@ -3,7 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/activity_main.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1325" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/drawable/button_black.xml" value="0.1" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/drawable/button_grey.xml" value="0.1325" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1325" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/drawable/selector_button.xml" value="0.1325" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/font/font.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/activity_begin.xml" value="0.176" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/begin__frag_register.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/begin_frag_home.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/begin_frag_login.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/begin_frag_register.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_find_pw.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_findpw.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_frag_find_pw.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_home.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_login.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/layout/fragment_begin_register.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/ej/BookMoa/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1325" />
       </map>
     </option>
   </component>

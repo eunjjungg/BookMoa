@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Begin_Home">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOOK\nMOA"
+            android:fontFamily="@font/nanumgarmaesgeur"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btn_findpw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="find pw"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>
