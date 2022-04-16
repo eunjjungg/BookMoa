@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,22 +8,54 @@
 
     >
 
-    <FrameLayout
-        android:id="@+id/framelayout_begin"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-        <fragment
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.smu.bookmoa.Begin_Home"
-        tools:layout="@layout/fragment_begin_home"/>
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOOK\nMOA"
+            android:fontFamily="@font/nanumgarmaesgeur"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnFindpw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="find pw"
+            android:onClick="onClick"
+            android:background="@drawable/selector_button"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
 
 
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

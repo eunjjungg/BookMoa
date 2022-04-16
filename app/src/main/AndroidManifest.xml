@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMoa">
         <activity
+            android:name=".Begin_Register"
+            android:exported="false"
+            android:label="@string/title_activity_begin_register"
+            android:theme="@style/Theme.BookMoa.NoActionBar" />
+        <activity
+            android:name=".Begin_Findpw"
+            android:exported="false" />
+        <activity
+            android:name=".Begin_Login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

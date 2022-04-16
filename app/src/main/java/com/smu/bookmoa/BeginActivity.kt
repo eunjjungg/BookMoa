@@ -1,22 +1,20 @@
 package com.smu.bookmoa
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.smu.bookmoa.databinding.ActivityBeginBinding
 
 class BeginActivity : AppCompatActivity(), View.OnClickListener {
 
-    val transaction = supportFragmentManager.beginTransaction()
+    val binding by lazy { ActivityBeginBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_begin)
-
-        findViewById<Button>(R.id.btn_findpw).setOnClickListener(this)
-        findViewById<Button>(R.id.btn_register).setOnClickListener(this)
-        findViewById<Button>(R.id.btn_login).setOnClickListener(this)
+        setContentView(binding.root)
 
     }
 
@@ -26,21 +24,17 @@ class BeginActivity : AppCompatActivity(), View.OnClickListener {
 
 
         when(p0?.id){
-            R.id.btn_findpw -> {
-                transaction.add(R.id.framelayout_begin, Begin_Findpw())
-                transaction.addToBackStack(null)
-                transaction.commit()
+            binding.btnFindpw.id -> {
+                val intentFindpw = Intent(this, Begin_Findpw::class.java)
+                startActivity(intentFindpw)
             }
-            R.id.btn_register -> {
-                transaction.replace(R.id.framelayout_begin, Begin_Register())
-                transaction.addToBackStack(null)
-                transaction.commit()
+            binding.btnRegister.id -> {
+                val intentRegister = Intent(this, Begin_Register::class.java)
+                startActivity(intentRegister)
             }
-            R.id.btn_login -> {
-                transaction.replace(R.id.framelayout_begin, Begin_Login())
-                transaction.hide(Begin_Home())
-                transaction.addToBackStack(null)
-                transaction.commit()
+            binding.btnLogin.id -> {
+                val intentLogin = Intent(this, Begin_Login::class.java)
+                startActivity(intentLogin)
             }
         }
     }
