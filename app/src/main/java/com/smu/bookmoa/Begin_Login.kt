@@ -18,7 +18,13 @@ class Begin_Login : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         auth = Firebase.auth
+
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
+
+
 
     override fun onClick(p0: View?) {
         when(p0?.id) {
@@ -27,6 +33,9 @@ class Begin_Login : AppCompatActivity(), View.OnClickListener {
                 val password = binding.etPw.text.toString()
                 logInProcess(email, password)
             }
+//            binding.btnBack.id -> {
+//                onBackPressed()
+//            }
         }
     }
 
