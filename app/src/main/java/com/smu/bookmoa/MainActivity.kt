@@ -3,12 +3,13 @@ package com.smu.bookmoa
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.smu.bookmoa.databinding.ActivityBeginBinding
 import com.smu.bookmoa.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.fragment_main_book_cal.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
+    private lateinit var calendarAdapter: CalendarAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnBook.setOnClickListener(this)
         binding.btnEvent.setOnClickListener(this)
         binding.btnSetting.setOnClickListener(this)
+
+        calendarAdapter = CalendarAdapter(this)
+
+        calendar.adapter = calendarAdapter
+        calendar.setCurrentItem(CalendarAdapter.START_POSITION, false)
+
+
     }
 
     override fun onClick(p0: View?) {
