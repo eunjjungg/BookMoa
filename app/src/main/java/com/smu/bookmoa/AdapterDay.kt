@@ -27,8 +27,9 @@ class AdapterDay(val tempMonth:Int, val dayList:MutableList<Date>): RecyclerView
         holder.layout.item_day_layout.setOnClickListener {
             if(tempMonth == dayList[position].month){
                 val intent = Intent(holder.itemView?.context, BookWrite::class.java)
+                //month / date 형식으로 날짜 String 전달
+                intent.putExtra("date", "${(dayList[position].month.toInt() + 1)} / ${dayList[position].date}")
                 ContextCompat.startActivity(holder.itemView.context, intent, null)
-                //Toast.makeText(holder.layout.context, "${dayList[position].date.toString()}", Toast.LENGTH_SHORT).show()
             }
         }
         holder.layout.item_day_text.text = dayList[position].date.toString()

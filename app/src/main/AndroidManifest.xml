@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMoa">
         <activity
-            android:name=".BookWrite"
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookWriteSearch"
             android:exported="false" />
         <activity
             android:name=".Begin_Register"
@@ -26,10 +29,10 @@
             android:name=".Begin_Login"
             android:exported="false" />
         <activity
-            android:name=".BeginActivity"
+            android:name=".BookWrite"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".BeginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

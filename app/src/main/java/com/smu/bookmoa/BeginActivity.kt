@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.smu.bookmoa.databinding.ActivityBeginBinding
+import java.util.*
 
 class BeginActivity : AppCompatActivity(), View.OnClickListener {
 
