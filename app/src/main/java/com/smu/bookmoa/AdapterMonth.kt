@@ -27,30 +27,6 @@ class AdapterMonth(): RecyclerView.Adapter<AdapterMonth.MonthView>() {
     override fun onBindViewHolder(holder: AdapterMonth.MonthView, position: Int) {
         makeMonth(holder, position, pvt)
 
-        // old trash code
-        /*calendar.time = Date()
-        calendar.set(Calendar.DAY_OF_MONTH, 1)
-        calendar.add(Calendar.MONTH, position - center)
-        holder.layout.item_month_text.text = "${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월"
-        val tempMonth = calendar.get(Calendar.MONTH)
-
-        var dayList: MutableList<Date> = MutableList(6*7) {Date()}
-        for(i in 0..5){
-            for(k in 0..6){
-                calendar.add(Calendar.DAY_OF_MONTH, (1 - calendar.get(Calendar.DAY_OF_WEEK)) + k)
-                dayList[i * 7 + k] = calendar.time
-            }
-            calendar.add(Calendar.WEEK_OF_MONTH, 1)
-        }
-
-        val dayListManager = GridLayoutManager(holder.layout.context, 7)
-        val dayListAdapter = AdapterDay(tempMonth, dayList)
-
-        holder.layout.item_month_day_list.apply {
-            layoutManager = dayListManager
-            adapter = dayListAdapter
-        }*/
-
         // next month 수정
         holder.layout.btnNextMonth.setOnClickListener {
             pvt++

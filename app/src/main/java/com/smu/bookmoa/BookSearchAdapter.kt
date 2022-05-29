@@ -2,6 +2,8 @@ package com.smu.bookmoa
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.smu.bookmoa.room.AppDatabase
+import com.smu.bookmoa.room.UsingDateDataFun
+import com.smu.bookmoa.room.WriteDateData
 import kotlinx.android.synthetic.main.book_item.view.*
 import java.util.*
 
@@ -31,7 +36,17 @@ class BookSearchAdapter
     override fun onBindViewHolder(holder: BookSearchAdapter.ViewHolder, position: Int) {
         holder.bindItems(bookResult.items.get(position))
         holder.itemView.setOnClickListener {
-            BookWirteDataStore().storeBookData(bookResult.items.get(position), date)
+            val isSuccess = BookWirteDataStore()
+                .storeBookData(bookResult.items.get(position), date.replace(" / ","_"))
+            if(isSuccess) {
+                Toast.makeText(holder.view.context, "저장 완료", Toast.LENGTH_SHORT).show()
+                UsingDateDataFun().insertDate(holder.view.context, date)
+            }
+            else {
+                Toast.makeText(holder.view.context, "저장 실패, 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
+            }
+            val intentFinish: Intent = Intent()
+            activity.setResult(Activity.RESULT_OK, intentFinish)
             activity.finish()
         }
     }
@@ -54,14 +69,10 @@ class BookSearchAdapter
                 "출판사 : ${data.publisher.replace("</b>", "").replace("<b>", "")}"
             itemView.tvTitle.text =
                 "제목 : ${data.title.replace("</b>", "").replace("<b>", "")}"
-
-
-//            itemView.setOnClickListener({
-//
-//                // 여기에 firebase store하는 작업이 필요
-//                Toast.makeText(view.context, adapterPosition.toString(), Toast.LENGTH_SHORT).show()
-//            })
         }
+
     }
+
+
 
 }
