@@ -9,6 +9,9 @@ import com.smu.bookmoa.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
+    val selectionBook: Int = 0
+    val selectionEvent: Int = 1
+    val selectionSetting: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(binding.mainFrame.id,Main_book_cal())
         transaction.commit()
+        activeIcon(selectionBook)
 
         binding.btnBook.setOnClickListener(this)
         binding.btnEvent.setOnClickListener(this)
@@ -30,15 +34,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             binding.btnBook.id -> {
                 transaction.replace(binding.mainFrame.id, Main_book_cal())
                 transaction.commit()
+                activeIcon(selectionBook)
             }
             binding.btnEvent.id -> {
                 transaction.replace(binding.mainFrame.id, Main_event_cal())
                 transaction.commit()
+                activeIcon(selectionEvent)
             }
             binding.btnSetting.id -> {
                 transaction.replace(binding.mainFrame.id, Main_setting())
                 transaction.commit()
+                activeIcon(selectionSetting)
             }
+        }
+    }
+
+    fun activeIcon(selection: Int){
+        binding.btnBook.setImageResource(R.drawable.ic_book_unselected)
+        binding.btnEvent.setImageResource(R.drawable.ic_event_unselected)
+        binding.btnSetting.setImageResource(R.drawable.ic_mypage_unselected)
+
+        when(selection) {
+            selectionBook -> binding.btnBook.setImageResource(R.drawable.ic_book_selected)
+            selectionEvent -> binding.btnEvent.setImageResource(R.drawable.ic_event_selected)
+            selectionSetting -> binding.btnSetting.setImageResource(R.drawable.ic_mypage_selected)
         }
     }
 

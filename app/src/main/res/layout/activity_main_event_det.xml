@@ -83,6 +83,6 @@
             android:id="@+id/eventImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_bevent_selected" />
+            app:srcCompat="@drawable/ic_event_selected" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
