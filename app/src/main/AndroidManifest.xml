@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BookMoa">
+        android:theme="@style/Theme.BookMoa"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Main_set_lock_pw"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -41,14 +44,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Main_event_set" />
-        <activity android:name=".Main_event_det"/>
-        <activity android:name=".Main_set_lock"/>
-        <activity android:name=".Main_set_acc"/>
-        <activity android:name=".Main_set_alarm"/>
-        <activity android:name=".Main_set_stat"/>
-        <activity android:name=".Main_acc_Chpw"/>
+        <activity android:name=".Main_event_det" />
+        <activity android:name=".Main_set_lock" />
+        <activity android:name=".Main_set_acc" />
+        <activity android:name=".Main_set_alarm" />
+        <activity android:name=".Main_set_stat" />
+        <activity android:name=".Main_acc_Chpw" />
+
     </application>
 
 </manifest>

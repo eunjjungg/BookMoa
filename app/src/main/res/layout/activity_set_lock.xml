@@ -43,10 +43,12 @@
         app:layout_constraintTop_toBottomOf="@+id/pageName">
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/switchLock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:track="@drawable/switch_selector"
+            android:thumb="@drawable/switch_thumb"
             android:text="잠금 사용" />
 
         <View
@@ -56,11 +58,13 @@
             android:background="@color/black" />
 
         <TextView
+            android:id="@+id/setPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:drawableRight="@drawable/ic_next"
-            android:text="비밀번호 변경"/>
+            android:text="비밀번호 설정"
+            android:enabled="false"/>
     </LinearLayout>
 
 

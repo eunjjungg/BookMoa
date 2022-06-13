@@ -54,21 +54,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="리디북스"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:buttonTint="@color/black"/>
 
         <CheckBox
             android:id="@+id/chYes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="예스24"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:buttonTint="@color/black"/>
 
         <CheckBox
             android:id="@+id/chAla"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="알라딘"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:buttonTint="@color/black"/>
 
         <View
             android:layout_width="match_parent"
@@ -88,14 +91,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ebook"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:buttonTint="@color/black"/>
 
         <CheckBox
             android:id="@+id/chWnovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="웹소설"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:buttonTint="@color/black"/>
 
         <Button
             android:id="@+id/btnSet"
