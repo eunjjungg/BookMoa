@@ -1,5 +1,6 @@
 package com.smu.bookmoa
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -33,9 +34,6 @@ class Begin_Login : AppCompatActivity(), View.OnClickListener {
                 val password = binding.etPw.text.toString()
                 logInProcess(email, password)
             }
-//            binding.btnBack.id -> {
-//                onBackPressed()
-//            }
         }
     }
 
@@ -45,6 +43,9 @@ class Begin_Login : AppCompatActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
                     Log.d("TAG", "signInWithEmail:success")
                     Toast.makeText(baseContext, "Sign in Success.", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                     val user = auth.currentUser
                 } else {
                     Log.w("TAG", "signInWithEmail:failure", task.exception)

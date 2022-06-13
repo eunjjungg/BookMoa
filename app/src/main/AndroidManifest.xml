@@ -13,6 +13,12 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.BookMoa">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookWriteSearch"
+            android:exported="false" />
+        <activity
             android:name=".Begin_Register"
             android:exported="false"
             android:label="@string/title_activity_begin_register"
@@ -24,10 +30,10 @@
             android:name=".Begin_Login"
             android:exported="false" />
         <activity
-            android:name=".BeginActivity"
+            android:name=".BookWrite"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".BeginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrPlatforms">
+        <item>구매처 선택</item>
+        <item>예스 24</item>
+        <item>알라딘</item>
+        <item>교보 문고</item>
+        <item>리디북스</item>
+        <item>카카오 페이지</item>
+        <item>네이버 시리즈</item>
+        <item>오프라인</item>
+    </string-array>
+</resources>

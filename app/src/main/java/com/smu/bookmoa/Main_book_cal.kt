@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import com.smu.bookmoa.room.AppDatabase
+import kotlinx.android.synthetic.main.fragment_main_book_cal.*
 
 
 class Main_book_cal : Fragment() {
-
 
     var pageIndex: Int = 0
 
@@ -26,6 +26,23 @@ class Main_book_cal : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main_book_cal, container, false)
+
+        val cal_custom: RecyclerView = view.findViewById(R.id.calendar_custom)
+        val monthListManager = LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false)
+        val monthListAdapter = AdapterMonth()
+
+        cal_custom.apply{
+            layoutManager = monthListManager
+            adapter = monthListAdapter
+            scrollToPosition(Int.MAX_VALUE / 2)
+        }
+
+        val snap = PagerSnapHelper()
+        snap.attachToRecyclerView(calendar_custom)
+
+
+
+
         return view
     }
 
