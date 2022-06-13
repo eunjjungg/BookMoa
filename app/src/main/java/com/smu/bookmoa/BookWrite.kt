@@ -14,10 +14,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.smu.bookmoa.databinding.ActivityBookWriteBinding
 import com.smu.bookmoa.room.AppDatabase
 import com.smu.bookmoa.room.UsingDateDataFun
 import com.smu.bookmoa.room.WriteDateData
+
 import kotlinx.android.synthetic.main.activity_book_write.*
 import java.lang.Exception
 import java.util.*
@@ -41,6 +43,8 @@ class BookWrite : AppCompatActivity() {
     //cloud firestore 용 변수
     var fbAuth : FirebaseAuth? = null
     var fbFirestore : FirebaseFirestore? = null
+    var fbStorage : FirebaseStorage?= null
+
     lateinit var dateText: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,25 +84,31 @@ class BookWrite : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-            val updateBookStoreData = BookStoreData()
-            updateBookStoreData.author = binding.etAuthor.text.toString()
-            updateBookStoreData.publisher = binding.etPublisher.text.toString()
-            updateBookStoreData.title = binding.etTitle.text.toString()
-            updateBookStoreData.platform = binding.spinnerPlatform.selectedItemPosition
-
-            //gallery로 업로드한걸로 register하고 싶을 시 아래 작업 수행
-            if(updateImageUriForGallery != null) {
-                //갤러리에서 업로드 시 생성되는 파일명 규칙
-                var dateForCloud = intent
-                    .getStringExtra("date")
-                    .toString()
-                    .replace(" / ","_")
-                updateBookStoreData.coverImg = "gallery" + dateForCloud + ".jpg"
-            } else {
-                updateBookStoreData.coverImg = null
+            if(binding.etTitle.text == null || binding.etTitle.text.toString() == ""){
+                Toast.makeText(this@BookWrite, "제목은 필수로 입력해주십시오", Toast.LENGTH_SHORT).show()
             }
+            else {
+                val updateBookStoreData = BookStoreData()
+                updateBookStoreData.author = binding.etAuthor.text.toString()
+                updateBookStoreData.publisher = binding.etPublisher.text.toString()
+                updateBookStoreData.title = binding.etTitle.text.toString()
+                updateBookStoreData.platform = binding.spinnerPlatform.selectedItemPosition
+                updateBookStoreData.review = binding.etReview.text.toString()
 
-            accessDBForUpdateData(updateBookStoreData)
+                //gallery로 업로드한걸로 register하고 싶을 시 아래 작업 수행
+                if (updateImageUriForGallery != null) {
+                    //갤러리에서 업로드 시 생성되는 파일명 규칙
+                    var dateForCloud = intent
+                        .getStringExtra("date")
+                        .toString()
+                        .replace(" / ", "_")
+                    updateBookStoreData.coverImg = "gallery" + dateForCloud + ".jpg"
+                } else {
+                    updateBookStoreData.coverImg = null
+                }
+
+                accessDBForUpdateData(updateBookStoreData)
+            }
         }
 
     }
@@ -174,6 +184,7 @@ class BookWrite : AppCompatActivity() {
     private fun accessDBForUpdateData(updateBookStoreData: BookStoreData) {
         this.fbAuth = FirebaseAuth.getInstance()
         this.fbFirestore = FirebaseFirestore.getInstance()
+        this.fbStorage = FirebaseStorage.getInstance()
         var dateForCloud = intent
             .getStringExtra("date")
             .toString()
@@ -187,6 +198,11 @@ class BookWrite : AppCompatActivity() {
         else {
             // <caution> 모르겠음
             // 1) cloud storage에 올리고
+            var imgFileName = "IMAGE_" + dateForCloud + ".png"
+            var fbStorageRef = fbStorage?.reference?.child("images")?.child(imgFileName)
+            fbStorageRef?.putFile(updateImageUriForGallery!!)?.addOnSuccessListener {
+
+            }
             // 2) 올린 사진의 uri를 가져와서 그걸
             // updateBookStoreData.coverImg에 저장
             // 그리고 하단 처리 동일
@@ -202,12 +218,13 @@ class BookWrite : AppCompatActivity() {
                     Toast.makeText(this@BookWrite, "저장 완료",
                         Toast.LENGTH_SHORT).show()
                     UsingDateDataFun().insertDate(applicationContext, dateText)
-                    finish()
                 }
                 else {
                     Log.d("bookDTO", "nothing")
                 }
             }
+
+        finish()
 
 
 
@@ -235,6 +252,9 @@ class BookWrite : AppCompatActivity() {
         }
         if(bookData.title != null) {
             binding.etTitle.setText(bookData.title)
+        }
+        if(bookData.review != null){
+            binding.etReview.setText(bookData.review)
         }
 
     }

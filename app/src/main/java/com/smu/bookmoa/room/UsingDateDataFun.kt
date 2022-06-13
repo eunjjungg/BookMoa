@@ -6,6 +6,12 @@ import com.smu.bookmoa.AdapterMakeService
 
 class UsingDateDataFun {
 
+    //read until now
+    fun readUntilNow(context: Context, date:String) {
+        val db = AppDatabase.getInstance(context)
+        db!!.writeDataDao().getAll()
+    }
+
     //writeDateData room db 안에 날짜 추가
     fun insertDate(context: Context, date: String) {
         val db = AppDatabase.getInstance(context)

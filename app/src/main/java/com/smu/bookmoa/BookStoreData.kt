@@ -12,5 +12,6 @@ data class BookStoreData(
     var author: String? = null,
     var coverImg: String? = null,
     var publisher: String? = null,
-    var platform: Int? = null
+    var platform: Int? = null,
+    var review: String? = null
 )
