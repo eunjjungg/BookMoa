@@ -17,7 +17,7 @@
 ## Detail
 ### 1. 설계 구조
 
-![image](https://user-images.githubusercontent.com/100047095/178299847-13796e18-bc28-46e2-9f82-da2c89d6fb2a.png)
+![image](https://user-images.githubusercontent.com/100047095/178301888-d89c947b-c116-49d4-83a9-a62578f8c8d6.png)
 
 
 ### 2. 독서 기록
