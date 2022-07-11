@@ -12,6 +12,7 @@
 1. Android Studio
 2. Kotlin
 3. Firebase
+4. Retrofit2
 
 ## Detail
 ### 1. 설계 구조
