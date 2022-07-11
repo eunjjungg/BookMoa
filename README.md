@@ -1,5 +1,6 @@
 # BookMoa 프로젝트
 독서 습관 정리 및 온라인 이북 플랫폼 이벤트 정리 앱입니다.
+![image](https://user-images.githubusercontent.com/100047095/178304262-4f4b2f3f-6f88-4d82-acb6-341129c1a478.png)
 
 ### Team
 서민경, 정은정 
